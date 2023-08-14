@@ -1,8 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import Button from "./Button";
 
-const App = () => {
-  return <div>Hello</div>;
-};
+function App() {
+  return (
+    <div>
+      <div>
+        <button>Hello</button>
+      </div>
+      <div>
+        <button></button>
+      </div>
+      <div>
+        <button></button>
+      </div>
+      <div>
+        <button></button>
+      </div>
+      <div>
+        <button></button>
+      </div>
+    </div>
+  );
+}
 
 export default App;

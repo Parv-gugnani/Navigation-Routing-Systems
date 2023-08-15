@@ -7,16 +7,16 @@ function App() {
         <button>Click Me!!</button>
       </div>
       <div>
-        <button>Buuy</button>
+        <button>Buy</button>
       </div>
       <div>
-        <button>hel</button>
+        <button>Hello</button>
       </div>
       <div>
-        <button>foll</button>
+        <button>Full</button>
       </div>
       <div>
-        <button>done</button>
+        <button>Done</button>
       </div>
     </div>
   );

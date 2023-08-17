@@ -12,7 +12,14 @@ function App() {
   return (
     <div>
       <div>
-        <Button success primary rounded outline onClick={handleClicks}>
+        <Button
+          success
+          primary
+          rounded
+          outline
+          className="mb-5"
+          onClick={handleClicks}
+        >
           <GoBell className="mr-1" />
           Click Me!!
         </Button>

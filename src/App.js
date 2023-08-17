@@ -1,26 +1,29 @@
+import React from "react";
 import Button from "./Button";
 
 function App() {
   return (
     <div>
       <div>
-        <button success primarys rounded outline>
+        <Button success primary rounded outline>
           Click Me!!
-        </button>
+        </Button>
       </div>
       <div>
-        <button danger outline>
+        <Button danger outline>
           Buy
-        </button>
+        </Button>
       </div>
       <div>
-        <button>Hello</button>
+        <Button secondary>Hello</Button>
       </div>
       <div>
-        <button>Full</button>
+        <Button secondary>Full</Button>
       </div>
       <div>
-        <button>Done</button>
+        <Button rounded warning>
+          Done
+        </Button>
       </div>
     </div>
   );

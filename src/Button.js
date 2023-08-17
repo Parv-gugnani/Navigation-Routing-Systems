@@ -8,7 +8,7 @@ function Button({
   outline,
   rounded,
 }) {
-  return <button className="text-blue-500">{children}</button>;
+  return <button className="px-3">{children}</button>;
 }
 Button.prototype = {
   checkVariationValue: ({ primary, secondary, success, warning, danger }) => {

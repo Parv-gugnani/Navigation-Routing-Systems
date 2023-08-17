@@ -5,10 +5,14 @@ import { GoBell, GoDatabase } from "react-icons/go";
 // mr-1 is  = margin
 // we dont add manually to each button
 function App() {
+  const handleClicks = () => {
+    console.log("click!");
+  };
+
   return (
     <div>
       <div>
-        <Button success primary rounded outline>
+        <Button success primary rounded outline onClick={handleClicks}>
           <GoBell className="mr-1" />
           Click Me!!
         </Button>

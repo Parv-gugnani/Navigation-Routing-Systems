@@ -16,6 +16,7 @@ function Button({
   danger,
   outline,
   rounded,
+  onClick,
 }) {
   //
   const classes = twMerge(
@@ -45,7 +46,11 @@ function Button({
   // how to import Icons'
   //we use react-icons
 
-  return <button className={classes}>{children}</button>;
+  return (
+    <button onClick={onClick} className={classes}>
+      {children}
+    </button>
+  );
 }
 Button.prototype = {
   checkVariationValue: ({ primary, secondary, success, warning, danger }) => {

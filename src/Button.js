@@ -17,7 +17,9 @@ function Button({
   outline,
   rounded,
   onClick,
+  ...rest
 }) {
+  console.log(rest);
   //
   const classes = twMerge(
     classNames("flex items-center px-3 py-1.5 border", {
@@ -47,7 +49,7 @@ function Button({
   //we use react-icons
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button {...rest} className={classes}>
       {children}
     </button>
   );

@@ -18,7 +18,7 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button danger outline>
+        <Button danger outline onMouseEnter={handleClicks}>
           <GoDatabase />
           Buy
         </Button>

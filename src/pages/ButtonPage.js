@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "./components/Button";
+import Button from "../components/Button";
 import { GoBell, GoDatabase } from "react-icons/go";
 
 // mr-1 is  = margin
 // we dont add manually to each button
-function App() {
+function ButtonPage() {
   const handleClicks = () => {
     console.log("click!");
   };
@@ -45,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default ButtonPage;

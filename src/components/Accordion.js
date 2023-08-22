@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Accordion({ items }) {
-  const [expandedIndex, SetExpandedIndex] = useState(0); //changed the extned one like (1) == then changed one decp
+  const [expandedIndex, setExpandedIndex] = useState(0); //changed the extned one like (1) == then changed one decp
   //
   const renderedItems = items.map((items, index) => {
     const isExpanded = index === expandedIndex;
@@ -9,7 +9,7 @@ function Accordion({ items }) {
 
     return (
       <div>
-        <div>{items.label}</div>
+        <div onClick={() => setExpandedIndex(index)}>{items.label}</div>
         {isExpanded && <div>{item.content}</div>}
       </div>
     );

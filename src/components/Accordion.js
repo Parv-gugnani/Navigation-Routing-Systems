@@ -5,12 +5,18 @@ function Accordion({ items }) {
   //
   const renderedItems = items.map((items, index) => {
     const isExpanded = index === expandedIndex;
-    // conditional rendering ->>>>>>>>
 
+    // long hand approach
+    // you will not see thisis thing in professionals projects
+    // if we need to upload various handle functions
+    const handleClick = (nextIndex) => {
+      setExpandedIndex(nextIndex);
+    };
+    // conditional rendering ->>>>>>>>
     return (
       <div>
-        <div onClick={() => setExpandedIndex(index)}>{items.label}</div>
-        {isExpanded && <div>{item.content}</div>}
+        <div onClick={() => handleClick(index)}>{items.label}</div>
+        {isExpanded && <div>{items.content}</div>}
       </div>
     );
   });

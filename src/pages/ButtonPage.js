@@ -5,9 +5,7 @@ import { GoBell, GoDatabase } from "react-icons/go";
 // mr-1 is  = margin
 // we dont add manually to each button
 function ButtonPage() {
-  const handleClicks = () => {
-    console.log("click!");
-  };
+  const handleClicks = () => {};
 
   return (
     <div>

@@ -37,36 +37,35 @@ Navigation and routing systems are crucial components in today's digital world. 
 
 > Hooks: Hooks are special functions in React that let you do things like managing state (useState), handling side effects (useEffect), and more. They make it easier to build interactive apps.
 
-`import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+```jsx
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function HomePage() {
-return <div>Welcome to the homepage!</div>;
+  return <div>Welcome to the homepage!</div>;
 }
 
 function AboutPage() {
-return <div>This is the about page.</div>;
+  return <div>This is the about page.</div>;
 }
 
 function App() {
-return (
-<Router>
-
-<nav>
-<ul>
-<li>
-<Link to="/">Home</Link>
-</li>
-<li>
-<Link to="/about">About</Link>
-</li>
-</ul>
-</nav>
-
+  return (
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
       <Route path="/" exact component={HomePage} />
       <Route path="/about" component={AboutPage} />
     </Router>
-
-);
+  );
 }
 
-export default App; `
+export default App;
+```

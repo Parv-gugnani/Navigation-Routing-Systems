@@ -5,8 +5,8 @@ import Dropdown from "./components/Dropdown";
 function App() {
   return (
     <div>
-      <Link to="/accordion"></Link>
-      <Link to="/dropdown"></Link>
+      <Link to="/accordion">Go to accordion</Link>
+      <Link to="/dropdown">Go to dropdown</Link>
     </div>
   );
 }

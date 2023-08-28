@@ -5,6 +5,15 @@ import App from "./App";
 import { NavigationProvider } from "./context/navigation";
 
 const el = document.getElementById("root");
+
+// Create a root and render the App component within it
 const root = ReactDOM.createRoot(el);
 
-root.render(<App />);
+// Wrap your App component with the NavigationProvider
+root.render(
+  <React.StrictMode>
+    <NavigationProvider>
+      <App />
+    </NavigationProvider>
+  </React.StrictMode>
+);

@@ -6,10 +6,15 @@ function Link({ to, children }) {
 
   const handleClick = (event) => {
     event.preventDefault();
-    //navigate! programmatically
+    // Navigate programmatically using the navigate function from the context
     navigate(to);
   };
-  return <a onClick={handleClick}>{children}</a>;
+
+  return (
+    <a href={to} onClick={handleClick}>
+      {children}
+    </a>
+  );
 }
 
 export default Link;

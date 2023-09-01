@@ -24,7 +24,7 @@ function App() {
         <Route path="/buttons">
           <ButtonPage />
         </Route>
-        <Route path="/button">
+        <Route path="/modal">
           <ModalPage />
         </Route>
       </div>

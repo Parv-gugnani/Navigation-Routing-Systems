@@ -5,6 +5,7 @@ import AccordionPage from "./pages/AccordionPage";
 import DropdownPage from "./pages/DropDownPage"; // Corrected the import
 import ButtonPage from "./pages/ButtonPage";
 import ModalPage from "./pages/MoadlPage";
+importy;
 
 function App() {
   return (

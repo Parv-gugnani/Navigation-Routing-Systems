@@ -14,6 +14,7 @@ function TablePage() {
     { label: "Score", render: (fruit) => fruit.score },
   ];
 
+  // ** this is square in js
   return (
     <div>
       <Table data={data} config={config} />

@@ -38,3 +38,16 @@ function App() {
 
 export default App;
 // module
+
+// sort is used to sort for ex - data=12,23,42,4 //  ===  data.sort
+
+/*
+// for sorting strings
+
+data.sortt((a,b) =>{
+  return a.localeCompare(b);
+});
+
+
+
+*/

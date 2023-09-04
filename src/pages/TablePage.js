@@ -11,7 +11,11 @@ function TablePage() {
   const config = [
     { label: "Name", render: (fruit) => fruit.name },
     { label: "Color", render: (fruit) => fruit.color },
-    { label: "Score", render: (fruit) => fruit.score },
+    {
+      label: "Score",
+      render: (fruit) => fruit.score,
+      header: () => <th className="bg-red-500">Score</th>,
+    },
   ];
 
   const keyFn = (fruit) => {

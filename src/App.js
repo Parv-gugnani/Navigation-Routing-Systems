@@ -51,3 +51,36 @@ data.sortt((a,b) =>{
 
 
 */
+
+//object sorting
+/*
+const data = [
+  {name:'Tomato',cost:10,weight:5},
+  {name:'carrot',cost:15,weight:2},
+  {name:'onion',cost:5,weight:7},
+];
+
+// sorting acc to cost ! or weight or name
+function getSortValue(vegetable) {
+  return vegetable.cost;
+}
+
+
+// 
+data.sortt((a,b))=>{
+  const valueA = getSortValue(A);
+  const valueB = getSortValue(B);
+
+  if(typeof valueA === 'string')
+  //else
+
+  return valueA - valueB;
+};
+
+*/
+
+//Reversing sort
+/*
+
+
+ */

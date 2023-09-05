@@ -1,42 +1,43 @@
-import React from "react";
+import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
 import Button from "../components/Button";
-import { GoBell, GoDatabase } from "react-icons/go";
 
-// mr-1 is  = margin
-// we dont add manually to each button
 function ButtonPage() {
-  const handleClicks = () => {};
+  const handleClick = () => {};
 
   return (
     <div>
       <div>
         <Button
-          success
-          primary
-          rounded
+          secondary
           outline
+          rounded
           className="mb-5"
-          onClick={handleClicks}
+          onClick={handleClick}
         >
-          <GoBell className="mr-1" />
-          Click Me!!
+          <GoBell />
+          Click me!!
         </Button>
       </div>
       <div>
-        <Button danger outline onMouseEnter={handleClicks}>
+        <Button danger outline onMouseEnter={handleClick}>
+          <GoCloudDownload />
+          Buy Now!
+        </Button>
+      </div>
+      <div>
+        <Button warning onMouseLeave={handleClick}>
           <GoDatabase />
-          Buy
+          See Deal!
         </Button>
       </div>
       <div>
-        <Button secondary>Hello</Button>
+        <Button secondary outline>
+          Hide Ads!
+        </Button>
       </div>
       <div>
-        <Button secondary>Full</Button>
-      </div>
-      <div>
-        <Button rounded warning>
-          Done
+        <Button primary rounded>
+          Something!
         </Button>
       </div>
     </div>

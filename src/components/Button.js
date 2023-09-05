@@ -1,12 +1,5 @@
-import { twMerge } from "tailwind-merge";
-import classNames from "classnames";
+import className from "classnames";
 
-const finalClassName = classNames("px-1.5", {
-  "bg-blue-500": true,
-  "text-yellow-500": false,
-});
-
-console.log(finalClassName);
 function Button({
   children,
   primary,
@@ -16,13 +9,12 @@ function Button({
   danger,
   outline,
   rounded,
-  onClick,
   ...rest
 }) {
-  console.log(rest);
-  //
-  const classes = twMerge(
-    classNames(rest.className, "flex items-center px-3 py-1.5 border", {
+  const classes = className(
+    rest.className,
+    "flex items-center px-3 py-1.5 border",
+    {
       "border-blue-500 bg-blue-500 text-white": primary,
       "border-gray-900 bg-gray-900 text-white": secondary,
       "border-green-500 bg-green-500 text-white": success,
@@ -35,18 +27,8 @@ function Button({
       "text-green-500": outline && success,
       "text-yellow-400": outline && warning,
       "text-red-500": outline && danger,
-    })
+    }
   );
-
-  // rather than writing this shit we use Library
-  // let baseClassName = "px-3 py-1.5 border-blue-600 bg-blue-500 text-white";
-  // if (primary) {
-  //   baseClassName += "bg-blue-500";
-  //   border - b;
-  // }
-
-  // how to import Icons'
-  //we use react-icons
 
   return (
     <button {...rest} className={classes}>
@@ -54,7 +36,8 @@ function Button({
     </button>
   );
 }
-Button.prototype = {
+
+Button.propTypes = {
   checkVariationValue: ({ primary, secondary, success, warning, danger }) => {
     const count =
       Number(!!primary) +
@@ -62,8 +45,11 @@ Button.prototype = {
       Number(!!warning) +
       Number(!!success) +
       Number(!!danger);
+
     if (count > 1) {
-      return new Error("Only one of them can be true");
+      return new Error(
+        "Only one of primary, secondary, success, warning, danger can be true"
+      );
     }
   },
 };

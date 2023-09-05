@@ -1,5 +1,6 @@
-import Table from "./Table";
 import { useState } from "react";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa"; // Import Font Awesome icons
+import Table from "./Table";
 
 function SortableTable(props) {
   const [sortOrder, setSortOrder] = useState(null);
@@ -7,6 +8,12 @@ function SortableTable(props) {
   const { config, data } = props;
 
   const handleClick = (label) => {
+    if (sortBy && label !== sortBy) {
+      setSortOrder("asc");
+      setSortBy(label);
+      return;
+    }
+
     if (sortOrder === null) {
       setSortOrder("asc");
       setSortBy(label);
@@ -23,17 +30,26 @@ function SortableTable(props) {
     if (!column.sortValue) {
       return column;
     }
+
     return {
       ...column,
       header: () => (
-        <th onClick={() => handleClick(column.label)}>
-          {column.label} is Sortable
+        <th
+          className="cursor-pointer hover:bg-gray-100"
+          onClick={() => handleClick(column.label)}
+        >
+          <div className="flex items-center">
+            {getIcons(column.label, sortBy, sortOrder)}
+            {column.label}
+          </div>
         </th>
       ),
     };
   });
 
-  // only sort data if soroder && sortby are not full
+  // Only sort data if sortOrder && sortBy are not null
+  // Make a copy of the 'data' prop
+  // Find the correct sortValue function and use it for sorting
   let sortedData = data;
   if (sortOrder && sortBy) {
     const { sortValue } = config.find((column) => column.label === sortBy);
@@ -51,15 +67,39 @@ function SortableTable(props) {
     });
   }
 
-  return (
-    <div>
-      {sortOrder} - {sortBy};
-      <Table {...props} data={sortedData} config={updatedConfig} />;
-    </div>
-  );
+  return <Table {...props} data={sortedData} config={updatedConfig} />;
+}
+
+function getIcons(label, sortBy, sortOrder) {
+  if (label !== sortBy) {
+    return (
+      <div>
+        <FaArrowUp />
+        <FaArrowDown />
+      </div>
+    );
+  }
+
+  if (sortOrder === null) {
+    return (
+      <div>
+        <FaArrowUp />
+        <FaArrowDown />
+      </div>
+    );
+  } else if (sortOrder === "asc") {
+    return (
+      <div>
+        <FaArrowUp />
+      </div>
+    );
+  } else if (sortOrder === "desc") {
+    return (
+      <div>
+        <FaArrowDown />
+      </div>
+    );
+  }
 }
 
 export default SortableTable;
-
-// asc for starting
-//desc for endings

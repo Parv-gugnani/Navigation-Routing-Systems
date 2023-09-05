@@ -4,16 +4,16 @@ import { useState } from "react";
 function SortableTable(props) {
   const [sortOrder, setSortOrder] = useState(null);
   const [sortBy, setSortBy] = useState(null);
-  const { config } = props;
+  const { config, data } = props;
 
-  const handleClick = () => {
-    if(sortOrder === null){
-      setSortOrder('asc');
+  const handleClick = (label) => {
+    if (sortOrder === null) {
+      setSortOrder("asc");
       setSortBy(label);
-    }else if(sortOrder === 'asc'{
-      setSortOrder('desc');
+    } else if (sortOrder === "asc") {
+      setSortOrder("desc");
       setSortBy(label);
-    }else if(sortOrder === 'desc'){
+    } else if (sortOrder === "desc") {
       setSortOrder(null);
       setSortBy(null);
     }
@@ -35,34 +35,31 @@ function SortableTable(props) {
 
   // only sort data if soroder && sortby are not full
   let sortedData = data;
-  if(sortOrder && sortBy){
-    const {sortValue} = config.find(column => column.label === sortBy)
-    sortedData = [...data].sort((a,b)=>{
-      const valueA = sortValues(a)
-      const valueB = sortValues(b)
+  if (sortOrder && sortBy) {
+    const { sortValue } = config.find((column) => column.label === sortBy);
+    sortedData = [...data].sort((a, b) => {
+      const valueA = sortValue(a);
+      const valueB = sortValue(b);
 
+      const reverseOrder = sortOrder === "asc" ? 1 : -1;
 
-      const reverseOrder = sortOrder = 'asc' ? 1 : -1;
-
-      if(typeof valueA === 'string') &{
+      if (typeof valueA === "string") {
         return valueA.localeCompare(valueB) * reverseOrder;
+      } else {
+        return (valueA - valueB) * reverseOrder;
       }
-      else{
-        return (valueA - valueB) * reverseOrder
-      }
-    })
+    });
   }
 
   return (
-  <div>
-    {sortOrder} - {sortBy};
-    <Table {...props} data={sortedData} config={updatedConfig} />;
+    <div>
+      {sortOrder} - {sortBy};
+      <Table {...props} data={sortedData} config={updatedConfig} />;
     </div>
-    )
+  );
 }
 
 export default SortableTable;
 
-
-// asc for starting 
+// asc for starting
 //desc for endings

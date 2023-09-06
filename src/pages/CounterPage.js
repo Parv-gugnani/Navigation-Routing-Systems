@@ -13,6 +13,7 @@ function CounterPage({ initialCount }) {
     setCount(count - 1);
   };
 
+  // fixed!
   const handleChange = (event) => {
     const value = event.target.value;
 

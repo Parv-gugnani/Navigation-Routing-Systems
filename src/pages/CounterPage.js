@@ -13,10 +13,10 @@ function CounterPage({ initialCount }) {
     setCount(count - 1);
   };
 
-  const handleChange = () => {
+  const handleChange = (event) => {
     const value = event.target.value;
 
-    console.log(value);
+    console.log(typeof value);
   };
 
   //

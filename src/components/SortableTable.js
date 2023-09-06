@@ -1,4 +1,4 @@
-import { GoArrowSmallDown, GoArrowSmallUp } from "react-icons/go";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa"; // Import Font Awesome icons
 import Table from "./Table";
 import useSort from "../hooks/use-sort";
 
@@ -37,8 +37,8 @@ function getIcons(label, sortBy, sortOrder) {
   if (label !== sortBy) {
     return (
       <div>
-        <GoArrowSmallUp />
-        <GoArrowSmallDown />
+        <FaArrowUp />
+        <FaArrowDown />
       </div>
     );
   }
@@ -46,20 +46,20 @@ function getIcons(label, sortBy, sortOrder) {
   if (sortOrder === null) {
     return (
       <div>
-        <GoArrowSmallUp />
-        <GoArrowSmallDown />
+        <FaArrowUp />
+        <FaArrowDown />
       </div>
     );
   } else if (sortOrder === "asc") {
     return (
       <div>
-        <GoArrowSmallUp />
+        <FaArrowUp />
       </div>
     );
   } else if (sortOrder === "desc") {
     return (
       <div>
-        <GoArrowSmallDown />
+        <FaArrowDown />
       </div>
     );
   }

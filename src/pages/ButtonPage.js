@@ -1,4 +1,4 @@
-import { GoBell, GoCloudDownload, GoDatabase } from "react-icons/go";
+import { FaBell, FaCloudDownloadAlt, FaDatabase } from "react-icons/fa"; // Import Font Awesome icons
 import Button from "../components/Button";
 
 function ButtonPage() {
@@ -14,19 +14,19 @@ function ButtonPage() {
           className="mb-5"
           onClick={handleClick}
         >
-          <GoBell />
+          <FaBell />
           Click me!!
         </Button>
       </div>
       <div>
         <Button danger outline onMouseEnter={handleClick}>
-          <GoCloudDownload />
+          <FaCloudDownloadAlt />
           Buy Now!
         </Button>
       </div>
       <div>
         <Button warning onMouseLeave={handleClick}>
-          <GoDatabase />
+          <FaDatabase />
           See Deal!
         </Button>
       </div>

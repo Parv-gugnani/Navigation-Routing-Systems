@@ -2,21 +2,27 @@ import Button from "../components/Button";
 import { useState } from "react";
 import Panel from "../components/Panel";
 import { useReducer } from "react";
+import { getByDisplayValue } from "@testing-library/react";
 
 const reducer = (state, action) => {
+  return {
+    ...state,
+    count: state.count + 1,
+  };
   //
 };
 
 function CounterPage({ initialCount }) {
   const [count, setCount] = useState(initialCount);
   const [valueToAdd, setValueToAdd] = useState(0);
+
   const [state, dispatch] = useReducer(reducer, {
     count: initialCount,
     valueToAdd: valueToAdd,
   });
 
   const increment = () => {
-    setCount(count + 1);
+    dispatch();
   };
   const decrement = () => {
     setCount(count - 1);
